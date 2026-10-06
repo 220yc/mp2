@@ -98,25 +98,32 @@ function ListView() {
         </button>
       </div>
 
-      <div className="gallery">
+      <div className="pokemon-list">
         {sortedPokemon.map((p) => (
           <Link
             key={p.id}
             to={`/pokemon/${p.id}`}
+            className="pokemon-list-link"
           >
-            <div className="pokemon-card">
-              <img
-                src={p.image}
-                alt={p.name}
-              />
+            <div className="pokemon-list-card">
+              <div className="list-image">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                />
+              </div>
 
-              <h2>
-                #{p.id} {p.name}
-              </h2>
+              <div className="list-info">
+                <h2>
+                  #{p.id} {p.name}
+                </h2>
 
-              <p>
-                Type: {p.types.join(", ")}
-              </p>
+                <p>
+                  Type: {p.types.join(", ")}
+                </p>
+              </div>
+
+              <span className="list-arrow">→</span>
             </div>
           </Link>
         ))}

@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Link,
   Route,
   Routes,
@@ -12,7 +12,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <nav className="navbar">
         <div className="nav-content">
           <Link className="brand" to="/">
@@ -31,7 +31,7 @@ function App() {
         <Route path="/gallery" element={<GalleryView />} />
         <Route path="/pokemon/:id" element={<DetailView />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
